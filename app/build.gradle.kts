@@ -31,6 +31,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8" // thêm
+    }
 }
 
 dependencies {
@@ -45,6 +49,7 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation ("androidx.cardview:cardview:1.0.0") //thêm
     implementation ("com.google.firebase:firebase-auth")
     implementation ("com.google.firebase:firebase-database")
 
