@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     android:id="@+id/register">
 
+    <ImageView
+        android:id="@+id/image_register"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="TODO"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_register" />
+
     <TextView
         android:id="@+id/text_register"
         android:layout_width="wrap_content"
@@ -15,7 +23,8 @@
         android:layout_alignParentTop="true"
         android:text="Đăng ký"
         android:textStyle="bold"
-        android:textSize="60sp"
+        android:textSize="50sp"
+        android:fontFamily="@font/samsungsharpsans_bold"
         />
 
     <TextView
@@ -33,10 +42,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/layout_register_input"
         android:layout_alignEnd="@id/layout_register_input"
+        android:layout_alignBaseline="@id/text_login"
         android:text="Đăng nhập"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textIsSelectable="true"
+        android:textIsSelectable="false"
         android:textColor="@color/light_red"
         />
 
@@ -53,7 +63,7 @@
             android:id="@+id/text_input_layout_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:hint="Nhập tên người dùng"
             app:endIconMode="clear_text"
             app:errorEnabled="true"
@@ -78,7 +88,7 @@
             android:id="@+id/text_input_layout_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:hint="Nhập email"
             android:layout_below="@id/text_input_layout_user"
             app:errorEnabled="true"
@@ -104,7 +114,7 @@
             android:id="@+id/text_input_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:layout_below="@id/text_input_layout_email"
             android:hint="Nhập mật khẩu"
             app:errorEnabled="true"
