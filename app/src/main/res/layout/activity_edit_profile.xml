@@ -1,0 +1,108 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Header Discord -->
+
+        <!-- Avatar & Username -->
+        <!-- Tự động lấy chiều cao của status bar -->
+
+
+        <ImageView
+            android:id="@+id/imgHeader"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:paddingTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/header_discord_profile" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/light_gray"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/discord_logo_profile"
+                android:background="@color/light_gray"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="12dp">
+
+                <TextView
+                    android:id="@+id/txtUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reddito_lhm1234"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/txtTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lhm1234 • #Bitfinity"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Các Trường Nhập -->
+        <TextView style="@style/InputLabel" android:text="Tên hiển thị"/>
+        <EditText
+            android:id="@+id/edtDisplayName"
+            style="@style/InputField"
+            android:hint="Nhập tên hiển thị"/>
+
+        <TextView style="@style/InputLabel" android:text="Đại từ nhân xưng"/>
+        <EditText
+            android:id="@+id/edtPronouns"
+            style="@style/InputField"
+            android:hint="Ví dụ: #Bitfinity"/>
+
+        <TextView style="@style/InputLabel" android:text="Email"/>
+        <EditText
+            android:id="@+id/edtEmail"
+            style="@style/InputField"
+            android:hint="example@gmail.com"
+            android:inputType="textEmailAddress"/>
+
+        <TextView style="@style/InputLabel" android:text="Giới thiệu về tôi"/>
+        <EditText
+            android:id="@+id/edtBio"
+            style="@style/InputField"
+            android:hint="Viết đôi điều về bạn..."
+            android:maxLines="4"
+            android:gravity="top"
+            android:inputType="textMultiLine"/>
+
+        <!-- Button Lưu -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cập nhật hồ sơ"
+            style="@style/ButtonPrimary"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>

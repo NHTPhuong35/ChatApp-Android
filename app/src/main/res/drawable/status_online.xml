@@ -1,0 +1,10 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <size
+        android:width="16dp"
+        android:height="16dp"/>
+    <solid android:color="#43B581"/> <!-- Màu xanh trạng thái online -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/white"/> <!-- Viền trắng giúp nổi bật -->
+</shape>
