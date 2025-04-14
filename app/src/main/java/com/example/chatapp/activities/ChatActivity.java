@@ -76,14 +76,14 @@ public class ChatActivity extends AppCompatActivity implements MessageController
         }
     }
 
-    //hiển thị tin nhắn
-    @Override
-    public void onMessagesReceived(List<Message> messages) {
-        messageList.clear();
-        messageList.addAll(messages);
-        adapter.notifyDataSetChanged();
-        recyclerView.post(() -> recyclerView.smoothScrollToPosition(messageList.size() - 1));
-    }
+//    //hiển thị tin nhắn
+//    @Override
+//    public void onMessagesReceived(List<Message> messages) {
+//        messageList.clear();
+//        messageList.addAll(messages);
+//        adapter.notifyDataSetChanged();
+//        recyclerView.post(() -> recyclerView.smoothScrollToPosition(messageList.size() - 1));
+//    }
 
     @Override
     public void onMessageAdded(Message message) {

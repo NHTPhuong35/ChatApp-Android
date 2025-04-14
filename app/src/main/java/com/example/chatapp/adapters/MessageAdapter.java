@@ -35,7 +35,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     @Override
     public int getItemViewType(int position) {
         // Kiểm tra nếu người gửi là chính người dùng
-        if (messageList.get(position).getSenderId().equals(currentUserId)) {
+        Message message = messageList.get(position);
+        if (message.getSenderId() != null && message.getSenderId().equals(currentUserId)) {
             return VIEW_TYPE_RIGHT;
         } else {
             return VIEW_TYPE_LEFT;

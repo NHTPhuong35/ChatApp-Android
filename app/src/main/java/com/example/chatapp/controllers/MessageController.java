@@ -5,6 +5,7 @@ import static com.example.chatapp.utils.Constants.USERS_NODE;
 
 import android.util.Log;
 
+import com.example.chatapp.adapters.MessageAdapter;
 import com.example.chatapp.models.Message;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -18,9 +19,12 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class MessageController {
     private DatabaseReference databaseRef, usersRef;
+    private List<Message> messageList = new ArrayList<>();
+    private AtomicInteger pendingMessages = new AtomicInteger(0);
 
     public MessageController() {
         databaseRef = FirebaseDatabase.getInstance().getReference(MESSAGES_NODE);
@@ -28,11 +32,6 @@ public class MessageController {
     }
 
     public void sendMessage(String senderId, String content, String type, String attachmentUrl) {
-        if (senderId == null || senderId.trim().isEmpty()) {
-            Log.e("MessageController", "Lỗi: SenderId không hợp lệ.");
-            return;
-        }
-
         if (content == null || content.trim().isEmpty()) {
             Log.e("MessageController", "Tin nhắn rỗng, không thể gửi.");
             return;
@@ -61,6 +60,8 @@ public class MessageController {
             public void onChildAdded(@NonNull DataSnapshot snapshot, String previousChildName) {
                 Message message = snapshot.getValue(Message.class);
                 if (message != null) {
+                    messageList.add(message);
+                    pendingMessages.incrementAndGet();
                     fetchUserDetails(message, listener);
                 }
             }
@@ -107,7 +108,14 @@ public class MessageController {
                     message.setAvatarUrl(avatarUrl != null ? avatarUrl : "");
                     message.setStatus(status != null ? status : "Offline");
                 }
-                listener.onMessageAdded(message);
+                Log.i("MessageController", "Tin nhắn mới: " + message.getContent());
+                if (pendingMessages.decrementAndGet() == 0) {
+                    // Khi tất cả tin nhắn đã được xử lý, trả về đúng thứ tự
+                    for (Message msg : messageList) {
+                        listener.onMessageAdded(msg);
+                    }
+                    messageList.clear();
+                }
             }
 
             @Override
@@ -120,7 +128,7 @@ public class MessageController {
 
     // Interface callback
     public interface MessageListener {
-        void onMessagesReceived(List<Message> messages);
+//        void onMessagesReceived(List<Message> messages);
         void onMessageAdded(Message message);
     }
 }
