@@ -1,5 +1,7 @@
 package com.example.chatapp.controllers;
 
+import static com.example.chatapp.utils.Constants.USERS_NODE;
+
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -23,7 +25,7 @@ public class UserController {
 
     public UserController() {
         mAuth = FirebaseAuth.getInstance();
-        databaseRef = FirebaseDatabase.getInstance().getReference("users");
+        databaseRef = FirebaseDatabase.getInstance().getReference(USERS_NODE);
     }
 
     // Đăng ký tài khoản Firebase
