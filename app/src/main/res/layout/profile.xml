@@ -101,12 +101,14 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@color/black" />
+
             <TextView
-                android:text="📅 10 Th9, 2024"
+                android:id="@+id/createdDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/gray" />
+                android:text="📅 10 Th9, 2024"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <!-- Phần Bạn Bè -->

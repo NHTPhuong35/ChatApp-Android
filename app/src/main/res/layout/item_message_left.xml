@@ -1,47 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="8dp">
 
+    <!-- Avatar -->
     <FrameLayout
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginEnd="9dp"
         android:layout_gravity="bottom">
 
-        <!-- Ảnh đại diện -->
         <ImageView
             android:id="@+id/imgAvatar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/uta"
+            android:src="@drawable/avatar"
             android:background="@drawable/circle_shape"
             android:clipToOutline="true" />
 
-        <!-- Chấm tròn -->
         <ImageView
             android:id="@+id/statusDot"
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_gravity="bottom|end"
-            android:background="@drawable/status_online"
-            android:layout_marginBottom="0dp"
-            android:layout_marginEnd="0dp"/>
+            android:background="@drawable/status_online"/>
     </FrameLayout>
 
-
     <!-- Nội dung tin nhắn -->
-    <TextView
-        android:id="@+id/txtMessage"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_edittext"
-        android:padding="10dp"
-        android:text="Tin nhắn"
-        android:textColor="#000000"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content">
 
+        <!-- Tên người gửi -->
+        <TextView
+            android:id="@+id/txtSenderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên người gửi"
+            android:textColor="#555555"
+            android:textSize="12sp" />
+
+        <!-- Tin nhắn văn bản -->
+        <TextView
+            android:id="@+id/txtMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:padding="10dp"
+            android:text="Tin nhắn"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <!-- Ảnh tin nhắn -->
+        <ImageView
+            android:id="@+id/imgMessage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
 </LinearLayout>

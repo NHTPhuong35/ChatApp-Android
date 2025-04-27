@@ -22,6 +22,7 @@ public class User {
     }
 
     public User(String userId, String email, String password,String status,  String createdAt){
+        this.userId = userId;
         this.email = email;
         this.password = password;
         this.status = status;

@@ -10,22 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:paddingBottom="20dp">
 
-        <!-- Header Discord -->
-
-        <!-- Avatar & Username -->
-        <!-- Tự động lấy chiều cao của status bar -->
-
-
+        <!-- Header Image -->
         <ImageView
             android:id="@+id/imgHeader"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="210dp"
             android:paddingTop="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/header_discord_profile" />
 
+        <!-- Avatar and User Info -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,6 +31,7 @@
             android:background="@color/light_gray"
             android:paddingBottom="16dp">
 
+            <!-- Avatar Image -->
             <ImageView
                 android:id="@+id/imgAvatar"
                 android:layout_width="80dp"
@@ -42,6 +40,18 @@
                 android:src="@drawable/discord_logo_profile"
                 android:background="@color/light_gray"/>
 
+            <!-- Edit Avatar Button -->
+            <ImageButton
+                android:id="@+id/btnEditAvatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_img_edit"
+            android:background="?attr/selectableItemBackground"
+            android:layout_gravity="center_vertical"/>
+
+            <!-- User Info -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,36 +77,34 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Các Trường Nhập -->
+        <!-- Input Fields -->
         <TextView style="@style/InputLabel" android:text="Tên hiển thị"/>
         <EditText
             android:id="@+id/edtDisplayName"
             style="@style/InputField"
             android:hint="Nhập tên hiển thị"/>
 
-        <TextView style="@style/InputLabel" android:text="Đại từ nhân xưng"/>
-        <EditText
-            android:id="@+id/edtPronouns"
-            style="@style/InputField"
-            android:hint="Ví dụ: #Bitfinity"/>
-
         <TextView style="@style/InputLabel" android:text="Email"/>
         <EditText
             android:id="@+id/edtEmail"
             style="@style/InputField"
             android:hint="example@gmail.com"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:enabled="false"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:clickable="false"/>
 
-        <TextView style="@style/InputLabel" android:text="Giới thiệu về tôi"/>
+        <TextView style="@style/InputLabel" android:text="Mật khẩu"/>
         <EditText
-            android:id="@+id/edtBio"
+            android:id="@+id/edtPassword"
             style="@style/InputField"
-            android:hint="Viết đôi điều về bạn..."
+            android:inputType="textPassword"
+            android:hint="Nhập mật khẩu"
             android:maxLines="4"
-            android:gravity="top"
-            android:inputType="textMultiLine"/>
+            android:gravity="top" />
 
-        <!-- Button Lưu -->
+        <!-- Save Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
@@ -104,5 +112,6 @@
             android:text="Cập nhật hồ sơ"
             style="@style/ButtonPrimary"
             android:layout_marginTop="16dp"/>
+
     </LinearLayout>
 </ScrollView>
