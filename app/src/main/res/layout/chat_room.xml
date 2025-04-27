@@ -6,7 +6,18 @@
     android:layout_height="match_parent"
     android:background="#F9F9F9">
 
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@android:color/black" />
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -18,28 +29,28 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/white"
+            android:elevation="4dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="10dp"
-            android:elevation="4dp">
+            android:padding="10dp">
 
-            <ImageView
-                android:id="@+id/btn_back"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/baseline_arrow_back_24"
-                app:tint="@color/blue_discord"
-                android:contentDescription="Quay lại"
-                android:layout_marginEnd="15dp" />
+            <!--            <ImageView-->
+            <!--                android:id="@+id/btn_back"-->
+            <!--                android:layout_width="30dp"-->
+            <!--                android:layout_height="30dp"-->
+            <!--                android:src="@drawable/baseline_arrow_back_24"-->
+            <!--                app:tint="@color/blue_discord"-->
+            <!--                android:contentDescription="Quay lại"-->
+            <!--                android:layout_marginEnd="15dp" />-->
 
             <ImageView
                 android:id="@+id/avatar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/uta"
                 android:background="@drawable/circle_shape"
-                android:clipToOutline="true" />
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/uta" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -66,11 +77,11 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/icon_find"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:id="@+id/icon_menu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/research_chatroom"
+                android:src="@drawable/dots"
                 app:tint="@color/blue_discord" />
         </LinearLayout>
 
@@ -103,11 +114,11 @@
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine"
                 android:maxLines="5"
-                android:padding="10dp"
                 android:minHeight="36dp"
+                android:padding="10dp"
                 android:singleLine="false"
                 android:textColor="#000000"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/btn_send"
@@ -125,7 +136,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:src="@drawable/link_chatroom"
-                app:tint="@color/blue_discord"/>
+                app:tint="@color/blue_discord" />
 
             <ImageView
                 android:id="@+id/btn_like"
